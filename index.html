@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IsoGraph.js</title>
+    <meta name="description" content="Simple solution for 3D dot graphs to be presented in an isometric view.">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            margin: 64px;
+        }
+
+        .wide-container {
+            height: 300px;
+            width: 700px;
+            background-color: #eeeeee;
+        }
+
+        .tall-container {
+            height: 500px;
+            width: 400px;
+            background-color: #eeeeee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="main">
+        <h1>IsoGraph.js</h1>
+        <div class="wrapper">
+            <div class="wide-container container" js-wide-graph>
+
+            </div>
+            <div class="tall-container cotnainer" js-tall-graph>
+
+            </div>
+        </div>
+    </section>
+    <script src="iso_graph.js"></script>
+    <script>
+        let wideGraph = document.querySelector('[js-wide-graph]');
+        let tallGraph = document.querySelector('[js-tall-graph]');
+
+        new IsoGraph ({
+            element: wideGraph,
+            name: 'wide-test-graph'
+        }).init();
+
+        new IsoGraph ({
+            element: tallGraph,
+            name: 'tall-test-graph'
+        }).init();
+
+    </script>
+</body>
+
+</html>
