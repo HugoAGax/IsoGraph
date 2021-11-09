@@ -27,8 +27,8 @@
         }
 
         .wide-container {
-            height: 300px;
-            width: 700px;
+            height: 600px;
+            width: 1000px;
             background-color: #eeeeee;
         }
 
@@ -58,14 +58,16 @@
         let wideGraph = document.querySelector('[js-wide-graph]');
         let tallGraph = document.querySelector('[js-tall-graph]');
 
-        new IsoGraph ({
+        this.graphOne = new IsoGraph ({
             element: wideGraph,
-            name: 'wide-test-graph'
+            name: 'wide-test-graph',
+            data: getRandomMatrix(8, 8)
         }).init();
 
-        new IsoGraph ({
+        this.graphTwo = new IsoGraph ({
             element: tallGraph,
-            name: 'tall-test-graph'
+            name: 'tall-test-graph',
+            data: getRandomMatrix(6, 7)
         }).init();
 
     </script>
